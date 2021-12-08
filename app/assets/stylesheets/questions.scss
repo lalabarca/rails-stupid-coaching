@@ -1,0 +1,79 @@
+// Place all the styles related to the questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$grey: #DDDDDD;
+$blue: #337AB7;
+$yellow: #FFFEE1;
+
+@mixin inputs() {
+  padding: 10px 20px;
+}
+
+@mixin transition () {
+  transition: all 0.5s;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 700px;
+  margin: 0 auto;
+
+}
+
+// page ask
+form {
+  display: flex;
+  flex-wrap: nowrap;
+  input[type=text] {
+    border: thin solid $grey;
+    border-radius: 6px 0 0 6px;
+    width: 100%;
+    @include inputs();
+  }
+  input[type=submit] {
+    @include inputs();
+    border: none;
+    background-color: $blue;
+    color: white;
+    border-radius: 0 6px 6px 0;
+    position: relative;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    @include transition();
+    &:hover {
+      background-color: darken($color: $blue, $amount: 15);
+    }
+  }
+}
+
+// page answer
+div {
+  margin-bottom: 25px;
+  padding: 5px 20px;
+  border-left: 6px solid $grey;
+
+  p:last-child {
+    font-style: italic;
+  }
+
+  &:last-of-type {
+    background-color: $yellow;
+
+    p:first-child {
+      font-weight: bold;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+  @include transition();
+  &:hover {
+    color: darken($color: $blue, $amount: 15);
+  }
+}

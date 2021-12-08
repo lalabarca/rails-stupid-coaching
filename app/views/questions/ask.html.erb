@@ -1,0 +1,9 @@
+<main class="container">
+  <h1>Stupid Coaching</h1>
+  <p>Ask your coach something</p>
+
+  <form action="/answer" methode="get">
+    <input type="text" name="question"  value="<%= params[:question] %>">
+    <input type="submit" value="Ask!">
+  </form>
+</main>
